@@ -3,33 +3,30 @@ name: Deploy Vite App to GitHub Pages
 on:
   push:
     branches:
-      - main   # đổi thành main nếu repo dùng main
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+      - main   # chạy khi push lên main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 18   # hoặc 20, không cần 24
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci   # hoặc yarn install --frozen-lockfile
 
       - name: Build project
         run: |
-          yarn build
+          npm run build
           cp dist/index.html dist/404.html
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
@@ -41,4 +38,4 @@ jobs:
       id-token: write
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v4
