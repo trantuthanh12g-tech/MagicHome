@@ -28,10 +28,10 @@ function InstagramIcon() {
 }
 
 const quickLinks = [
-  { label: "Home", href: "/MagicHome/" },
-  { label: "Services", href: "/MagicHome/" },
-  { label: "Portfolio", href: "/MagicHome/portfolio" },
-  { label: "Pricing", href: "/MagicHome/pricing" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/#services" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 interface SharedFooterProps {
@@ -40,7 +40,7 @@ interface SharedFooterProps {
 
 export function SharedFooter({ onContactOpen }: SharedFooterProps) {
   const { services } = useServices();
-  const footerImg = `${import.meta.env.BASE_URL}Footer-Img/Footer.jpg`;
+  const footerImg = `/Footer-Img/Footer.jpg`;
 
   const handleContactClick = () => {
     window.dispatchEvent(new CustomEvent("open-contact-modal"));

@@ -26,9 +26,9 @@ export const router = createBrowserRouter(
     {
       path: "*",
       Component: NotFound,
-    },
+    }
   ],
   {
-    basename: "/MagicHome",   // repo name
+    basename: "/",
   }
 );

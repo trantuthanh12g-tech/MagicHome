@@ -3,7 +3,7 @@ name: Deploy Vite App to GitHub Pages
 on:
   push:
     branches:
-      - master   # đổi thành main nếu repo dùng main
+      - main   # đổi thành main nếu repo dùng main
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
