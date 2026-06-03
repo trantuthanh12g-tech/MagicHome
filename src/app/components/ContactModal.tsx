@@ -185,7 +185,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             {/* Footer */}
             <div className="px-7 pb-7">
               <p className="text-center text-gray-400 text-xs">
-                We typically respond within a few hours ✦
+                We typically respond within a few minutes ✦
               </p>
             </div>
           </motion.div>
